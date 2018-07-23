@@ -1,7 +1,7 @@
 <?php
 /*Задача 6:
  Используя куки выводите информацию о количестве посещений и дате последнего посещения.*/
-setcookie('lastVisit', date('Y-m-d H:i:s'), time()+3600*24*31);
+setcookie('lastVisit', date('Y-m-d H:i:s'), time() + 3600 * 24 * 31);
 if (isset($_COOKIE['counter'])) {
     $counter = $_COOKIE['counter'];
 } else {
@@ -78,19 +78,40 @@ switch ($day) {
 /*Задача 5:
  Вывести все числа, меньшие 10000, у которых есть хотя бы одна цифра 3 и которые не делятся на 5*/
 
-$array = range(1, 10000);
-foreach ($array as $value) {
-    if ($value < 10000 && strpos($value, '3') && $value % 5) {
-        echo $value . '</br>';
-    }
-}
+//$array = range(1, 10000);
+//foreach ($array as $value) {
+//    if ($value < 10000 && strpos($value, '3') && $value % 5) {
+//        echo $value . '</br>';
+//    }
+//}
 
 /*Задача 6:
  Используя куки выводите информацию о количестве посещений и дате последнего посещения.*/
-if(isset($_COOKIE['lastVisit'])) {
+if (isset($_COOKIE['lastVisit'])) {
     echo 'Last visit ' . $_COOKIE['lastVisit'] . '</br>';
 } else {
     echo 'This is first visit ' . '</br>';
 }
 echo "Number of your visit $counter" . '</br>';
+
+/*Задача 7 в task7.php, page1.php, page2.php, page3.php*/
+
+/*Задача 8 в task8.php, filelogic.php*/
+
+/*Задача 9:
+ Даны два упорядоченных по возрастанию массива. Образовать из этих двух массивов единый упорядоченный по возрастанию массив.*/
+
+$firstArray = [1, 3, 5, 7, 9];
+$secondArray = [2, 4, 6, 8];
+
+$sortArray = array_merge($firstArray, $secondArray);
+asort($sortArray);
+
+foreach ($sortArray as $valueOfSort) {
+    echo $valueOfSort . '</br>';
+}
+
+/*Задача 10: в task10.php, functions.php*/
 ?>
+
+
